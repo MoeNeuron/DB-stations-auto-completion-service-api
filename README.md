@@ -46,7 +46,7 @@ npm run dev
 ```
 
 The server should be available at [`http://localhost:3000`](http://localhost:3000).
-Make sure to set up the necessary environment variables for the application, such as the port number and any configuration options specific to your environment. Refer to the `.env` file for the available options.
+Make sure to set up the necessary environment variables for the application, such as the port number and any configuration options specific to your environment. Refer to the `.env` file for the available options (discarded in `.gitignore` for demonstration purposes of its content).
 
 ## API Endpoints
 
@@ -54,13 +54,13 @@ The API is versrioned and current version is `1`.
 
 | Method | Endpoint                    | Description                                             |
 | ------ | --------------------------- | ------------------------------------------------------- |
-| `GET`    | `/api/v1/autocomplete/:query` | Retrieves auto-complete suggestions for the given query |
+| `GET`    | `/api/v1/auto-complete/:query` | Retrieves auto-complete suggestions for the given query |
 
 The `query` parameter represents the partial station name to search for.
 
 ## Examples
 
-- Request: `GET /api/v1/autocomplete/altdoe`
+- Request: `GET /api/v1/auto-complete/altdoe`
   Response:
   ```json
   {
