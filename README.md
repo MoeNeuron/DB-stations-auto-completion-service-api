@@ -45,6 +45,7 @@ npm run test
 npm run dev
 ```
 
+The endpoint should be served at [`http://localhost:3000`](http://localhost:3000).
 Make sure to set up the necessary environment variables for the application, such as the port number and any configuration options specific to your environment. Refer to the `.env` file for the available options.
 
 ## API Endpoints

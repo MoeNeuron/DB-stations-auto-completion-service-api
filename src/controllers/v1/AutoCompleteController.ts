@@ -9,6 +9,12 @@ import { performance } from "perf_hooks";
 
 @injectable()
 export class AutoCompleteController {
+  /**
+   * The AutoCompleteController module acts as an intermediary between the API routes and the service layer.
+   * It receives incoming requests, validates input, and invokes the appropriate service methods.
+   * It also formats the responses and sends them back to the client.
+   */
+
   constructor(
     @inject("IAutoCompleteService")
     private autoCompleteService: IAutoCompleteService

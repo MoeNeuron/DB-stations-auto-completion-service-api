@@ -8,12 +8,6 @@ import {
   LongQueryError,
 } from "../../errors";
 
-// TODO test base functionality
-// TODO autocompleteResponse
-// TODO tests service
-// TODO doc evey single module
-// TODO deploy
-
 export interface IAutoCompleteService {
   getAutoComplete(query: string): Promise<any>;
   translierate(query: string): string;
@@ -22,6 +16,11 @@ export interface IAutoCompleteService {
 
 @injectable()
 export class AutoCompleteService implements IAutoCompleteService {
+  /**
+   * The AutoCompleteService module handles the business logic for retrieving auto-complete suggestions.
+   * It interacts with the data layer, performs data manipulation, and provides the necessary methods for auto-complete functionality.
+   */
+
   private stations: Station[] = [];
   private trie: TrieSearch<Station> = new TrieSearch<Station>("NAME", {
     ignoreCase: true,

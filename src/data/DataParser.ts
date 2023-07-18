@@ -4,13 +4,13 @@ import { Station } from "./StationModel";
 import { InternalError } from "../errors";
 
 const filePath = "./src/data/stations.csv";
-// D_Bahnhof_2016_01_alle.csv
-// TODO base functionality
-// TODO unittests
-// TODO deploy
-// TODO flexibility to use url or file (add needed info in .env)
 
 const dataParser = (): Promise<Station[]> => {
+  /**
+   * The dataParser module is responsible for parsing and retrieving the station data.
+   * It reads the station data from a data source, processes it, and returns the parsed data in a usable format.
+   */
+
   return new Promise<Station[]>((resolve, reject) => {
     const stations: Station[] = [];
     const readableStream = fs.createReadStream(filePath, "utf-8");
