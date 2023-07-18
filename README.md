@@ -10,12 +10,12 @@ The Backend AutoComplete is a RESTful API that provides auto-complete suggestion
 
 ## Technologies Used
 
-- Node.js: The application is built using Node.js, a powerful JavaScript runtime environment.
-- Express.js: Express.js is used as the web framework for handling HTTP requests and responses.
-- TypeScript: The application is written in TypeScript, providing static typing and improved maintainability.
-- Trie data structure: The Trie data structure is used to efficiently store and search for station names.
-- Dependency Injection: The application uses the dependency injection pattern, allowing for modular and testable code.
-
+- `Node.js`: The application is built using Node.js, a powerful JavaScript runtime environment.
+- `Express.js`: Express.js is used as the web framework for handling HTTP requests and responses.
+- `TypeScript`: The application is written in TypeScript, providing static typing and improved maintainability.
+- `Trie data structure`: The Trie data structure is used to efficiently store and search for station names.
+- Other Modular architectures/patterns: `MVC` and `Dependency Injection`.
+- 
 ## Getting Started
 
 To build, test, and run the application, follow these steps:
@@ -54,15 +54,13 @@ The API is versrioned and current version is `1`.
 
 | Method | Endpoint                    | Description                                             |
 | ------ | --------------------------- | ------------------------------------------------------- |
-| GET    | /api/v1/autocomplete/:query | Retrieves auto-complete suggestions for the given query |
+| `GET`    | `/api/v1/autocomplete/:query` | Retrieves auto-complete suggestions for the given query |
 
-### GET /autocomplete/:query
-
-Retrieves auto-complete suggestions for the given query. The `query` parameter represents the partial station name to search for.
+The `query` parameter represents the partial station name to search for.
 
 ## Examples
 
-- Request: `GET /autocomplete/altdoe`
+- Request: `GET /api/v1/autocomplete/altdoe`
   Response:
   ```json
   {
