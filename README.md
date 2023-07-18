@@ -45,14 +45,16 @@ npm run test
 npm run dev
 ```
 
-The endpoint should be served at [`http://localhost:3000`](http://localhost:3000).
+The server should be available at [`http://localhost:3000`](http://localhost:3000).
 Make sure to set up the necessary environment variables for the application, such as the port number and any configuration options specific to your environment. Refer to the `.env` file for the available options.
 
 ## API Endpoints
 
-| Method | Endpoint             | Description                                             |
-| ------ | -------------------- | ------------------------------------------------------- |
-| GET    | /autocomplete/:query | Retrieves auto-complete suggestions for the given query |
+The API is versrioned and current version is `1`.
+
+| Method | Endpoint                    | Description                                             |
+| ------ | --------------------------- | ------------------------------------------------------- |
+| GET    | /api/v1/autocomplete/:query | Retrieves auto-complete suggestions for the given query |
 
 ### GET /autocomplete/:query
 
