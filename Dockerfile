@@ -1,31 +1,28 @@
 FROM node:18-alpine
 
-# Create app directory
+# Set the working directory
 WORKDIR /app
 
-# Install app dependencies
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-RUN npm ci
+# Install app dependencies
+# RUN npm ci --production
+RUN npm install
 
+# Copy the rest of the application code
 COPY . .
 
+# RUN npm install typescript (you need to include for build script if enable production mode)
+
+# Build the application
 RUN npm run build
 
-FROM node:slim
+# Set the production environment
+# ENV NODE_ENV=production
 
-ENV NODE_ENV production
-USER node
-
-# Create app directory
-WORKDIR /app
-
-# Install app dependencies
-COPY package*.json ./
-
-RUN npm ci --production
-
-COPY --from=builder /app/ ./
-
+# Expose the desired port (replace 3000 with your application's actual port)
 EXPOSE 3000
+
+# Start the application
 CMD [ "node", "dist/src/server.js" ]

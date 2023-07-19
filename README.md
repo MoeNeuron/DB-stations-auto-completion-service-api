@@ -15,8 +15,21 @@ The Backend AutoComplete is a RESTful API that provides auto-complete suggestion
 - `TypeScript`: The application is written in TypeScript, providing static typing and improved maintainability.
 - `Trie data structure`: The Trie data structure is used to efficiently store and search for station names.
 - Other Modular architectures/patterns: `MVC` and `Dependency Injection`.
-- 
-## Getting Started
+- (and for sure there is more room for improvement)
+
+## Getting Started (Locally)
+
+### A quick start via `docker-compose`:
+
+```bash
+docker-compose up
+```
+
+The server should be available at [`http://localhost:3000`](http://localhost:3000).
+
+NOTE: This setup may add a fraction of `ms` delay, particularly if you deploy the container on a cluster.
+
+### Alternative setup:
 
 To build, test, and run the application, follow these steps:
 
@@ -33,7 +46,7 @@ npm install
 npm run build
 ```
 
-4. Run the tests:
+4. Run the tests (optional):
 
 ```bash
 npm run test
@@ -52,9 +65,9 @@ Make sure to set up the necessary environment variables for the application, suc
 
 The API is versrioned and current version is `1`.
 
-| Method | Endpoint                    | Description                                             |
-| ------ | --------------------------- | ------------------------------------------------------- |
-| `GET`    | `/api/v1/auto-complete/:query` | Retrieves auto-complete suggestions for the given query |
+| Method | Endpoint                       | Description                                             |
+| ------ | ------------------------------ | ------------------------------------------------------- |
+| `GET`  | `/api/v1/auto-complete/:query` | Retrieves auto-complete suggestions for the given query |
 
 The `query` parameter represents the partial station name to search for.
 
@@ -69,3 +82,5 @@ The `query` parameter represents the partial station name to search for.
     "number_of_stations_found": "1"
   }
   ```
+
+As you see here, the umlaut in the query parameter `altdoe` gets successfully resolved to `altdö`.
